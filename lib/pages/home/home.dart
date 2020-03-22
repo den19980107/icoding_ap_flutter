@@ -7,6 +7,7 @@ import 'package:icoding_ap/widgets/drawer.dart';
 import 'package:icoding_ap/widgets/text.dart';
 
 class Home extends StatefulWidget {
+  static const String routerName = "/home";
   @override
   _HomeState createState() => _HomeState();
 }

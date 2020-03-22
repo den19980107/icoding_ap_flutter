@@ -3,9 +3,9 @@ import 'package:icoding_ap/widgets/text.dart';
 
 class FullWidthButton extends StatelessWidget {
   final GestureTapCallback onPressed;
-  Color color;
-  Color textColor;
-  String title;
+  final Color color;
+  final Color textColor;
+  final String title;
   FullWidthButton(this.title,
       {this.color, @required this.onPressed, this.textColor});
   @override
@@ -28,10 +28,10 @@ class FullWidthButton extends StatelessWidget {
 
 class FullWidthButtonWithIcon extends StatelessWidget {
   final GestureTapCallback onPressed;
-  Color color;
-  Color textColor;
-  String title;
-  Widget icon;
+  final Color color;
+  final Color textColor;
+  final String title;
+  final Widget icon;
   FullWidthButtonWithIcon(this.title, this.icon,
       {this.color, @required this.onPressed, this.textColor});
   @override

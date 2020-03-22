@@ -3,7 +3,7 @@ import 'package:icoding_ap/models/Class.dart';
 import 'package:icoding_ap/pages/classDashboard/classDashboard.dart';
 
 class ClassItem extends StatelessWidget {
-  Class classData;
+  final Class classData;
   ClassItem(this.classData);
 
   @override
@@ -31,9 +31,11 @@ class ClassItem extends StatelessWidget {
           title: Text(classData.name),
           onTap: () {
             Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => ClassDashBoard(classData)));
+              context,
+              MaterialPageRoute(
+                builder: (context) => ClassDashBoard(classData),
+              ),
+            );
           },
         ),
       ),

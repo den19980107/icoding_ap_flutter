@@ -12,6 +12,8 @@ import 'package:icoding_ap/widgets/share_data_widget.dart';
 import 'package:icoding_ap/widgets/text.dart';
 
 class LoginPage extends StatefulWidget {
+  static const String routerName = "/login";
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }

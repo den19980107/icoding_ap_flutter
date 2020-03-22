@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:icoding_ap/models/Class.dart';
-import 'package:icoding_ap/widgets/fullWidthButton.dart';
+import 'package:icoding_ap/pages/classDashboard/classStatusButton.dart';
 import 'package:html/dom.dart' as dom;
+import 'package:icoding_ap/widgets/videoPlayer.dart';
 
 class ClassDashBoard extends StatefulWidget {
-  Class classInfo;
+  final Class classInfo;
   ClassDashBoard(this.classInfo);
   @override
   _ClassDashBoardState createState() => _ClassDashBoardState();
@@ -20,32 +21,12 @@ class _ClassDashBoardState extends State<ClassDashBoard> {
       ),
       body: ListView(
         children: <Widget>[
-          // VideoPlayerScreen(),
-          Container(
-            height: 200,
-            color: Colors.grey,
+          VideoPlayer(
+            aspectRatioX: 16,
+            aspectRatioY: 9,
+            videoUrl: widget.classInfo.introVideoUrl,
           ),
-          Column(
-            children: <Widget>[
-              SizedBox(
-                height: 10,
-              ),
-              FullWidthButton(
-                "我要上課",
-                color: Colors.green,
-                textColor: Colors.white,
-                onPressed: () {},
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              FullWidthButton(
-                "收藏",
-                textColor: Colors.black54,
-                onPressed: () {},
-              ),
-            ],
-          ),
+          ClassStatusButton(widget.classInfo.id, widget.classInfo.teacherId),
           SizedBox(
             height: 10,
           ),

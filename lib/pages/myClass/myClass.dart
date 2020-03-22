@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:icoding_ap/api/index.dart';
 import 'package:icoding_ap/models/Class.dart';
 import 'package:icoding_ap/pages/home/classList.dart';
-import 'package:icoding_ap/widgets/fullWidthButton.dart';
 import 'package:icoding_ap/widgets/share_data_widget.dart';
 import 'package:icoding_ap/widgets/text.dart';
 

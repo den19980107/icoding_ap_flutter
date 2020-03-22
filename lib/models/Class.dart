@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 class Class {
+  String id;
   String name;
   String outline;
   String teacherId;
@@ -13,6 +14,7 @@ class Class {
   String introVideoUrl;
 
   Class({
+    this.id,
     this.name,
     this.outline,
     this.teacherId,
@@ -30,6 +32,7 @@ class Class {
   String toRawJson() => json.encode(toJson());
 
   factory Class.fromJson(Map<String, dynamic> json) => new Class(
+        id: json["_id"],
         name: json["name"],
         outline: json["outline"],
         teacherId: json["teacherId"],
@@ -43,6 +46,7 @@ class Class {
       );
 
   Map<String, dynamic> toJson() => {
+        "_id": id,
         "name": name,
         "outline": outline,
         "teacherId": teacherId,

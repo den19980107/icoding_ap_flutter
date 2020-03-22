@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:icoding_ap/models/User.dart';
 import 'package:icoding_ap/bottomNavigator.dart';
 import 'package:icoding_ap/pages/authenticate/authenticate.dart';
-
 import 'package:icoding_ap/widgets/share_data_widget.dart';
 
 class MyApp extends StatefulWidget {
@@ -11,15 +10,26 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
+  UserInfo userInfo;
+
+  setUserInfo(UserInfo user) {
+    setState(() {
+      userInfo = user;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'icoding',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
+    return ShareDataWidget(
+      data: this,
+      child: MaterialApp(
+        title: 'icoding',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+        ),
+        home: Wrapper(title: 'icoding Home Page'),
       ),
-      home: Wrapper(title: 'icoding Home Page'),
     );
   }
 }
@@ -34,25 +44,14 @@ class Wrapper extends StatefulWidget {
 }
 
 class WrapperState extends State<Wrapper> {
-  UserInfo userInfo;
-
-  setUserInfo(UserInfo user) {
-    setState(() {
-      userInfo = user;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     Widget renderWidget = new Container();
-    if (userInfo == null) {
+    if (ShareDataWidget.of(context).data.userInfo == null) {
       renderWidget = Authenticate();
     } else {
       renderWidget = BottomNavigator();
     }
-    return ShareDataWidget(
-      data: this,
-      child: renderWidget,
-    );
+    return renderWidget;
   }
 }

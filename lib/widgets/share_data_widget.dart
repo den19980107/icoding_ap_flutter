@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:icoding_ap/app.dart';
 
 class ShareDataWidget extends InheritedWidget {
-  final WrapperState data;
+  final MyAppState data;
 
   ShareDataWidget({this.data, Widget child}) : super(child: child);
 

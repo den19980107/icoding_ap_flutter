@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:icoding_ap/api/index.dart';
 import 'package:icoding_ap/models/Class.dart';
 import 'package:icoding_ap/pages/home/classItem.dart';
 
 class ClassList extends StatefulWidget {
-  Future<List<Class>> classes;
+  final Future<List<Class>> classes;
   ClassList(this.classes);
   @override
   _ClassListState createState() => _ClassListState();
